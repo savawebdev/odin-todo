@@ -59,13 +59,9 @@
 .tasks {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
-}
-
-.task-category {
-  display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .card {
