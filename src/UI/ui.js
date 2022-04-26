@@ -16,11 +16,11 @@ const UI = (() => {
 
     const taskCardDueDate = document.createElement("p");
     taskCardDueDate.classList.add("card-due-date");
-    taskCardDueDate.textContent = dueDate;
+    taskCardDueDate.textContent = `Due Date: ${dueDate}`;
 
     const taskCardPriority = document.createElement("p");
     taskCardPriority.classList.add("card-priority");
-    taskCardPriority.textContent = priority;
+    taskCardPriority.textContent = `Priority: ${priority}`;
 
     taskCard.append(
       taskCardTitle,
@@ -34,11 +34,12 @@ const UI = (() => {
 
   const displayProjects = (projects) => {
     const projectsList = document.querySelector(".projects-list");
+    projectsList.innerHTML = "";
 
     projects.forEach((project) => {
       const newListItem = document.createElement("li");
       newListItem.classList.add("projects-list-item");
-      newListItem.textContent = project.name;
+      newListItem.textContent = project.title;
       newListItem.setAttribute("data-project-id", project.id);
       projectsList.appendChild(newListItem);
     });

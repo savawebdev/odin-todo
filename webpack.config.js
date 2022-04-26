@@ -3,7 +3,10 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: {
+    index: "./src/index.js",
+    projectsController: "./src/controllers/projectsController.js",
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Odin ToDo",

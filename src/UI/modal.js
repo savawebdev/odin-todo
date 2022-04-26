@@ -1,5 +1,7 @@
 const modal = (() => {
   const overlay = document.querySelector(".overlay");
+  const newTaskModal = document.getElementById("new-task-modal");
+  const newProjectModal = document.getElementById("new-project-modal");
 
   const open = (modalElement) => {
     overlay.classList.remove("hidden");
@@ -9,6 +11,12 @@ const modal = (() => {
   const close = (modalElement) => {
     overlay.classList.add("hidden");
     modalElement.classList.add("hidden");
+  };
+
+  const closeAll = () => {
+    [overlay, newTaskModal, newProjectModal].forEach((element) => {
+      element.classList.add("hidden");
+    });
   };
 
   const setupModals = () => {
@@ -46,7 +54,7 @@ const modal = (() => {
     });
   };
 
-  return { open, close, setupModals };
+  return { open, close, closeAll, setupModals };
 })();
 
 export default modal;
