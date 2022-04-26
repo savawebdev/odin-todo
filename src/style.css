@@ -171,6 +171,11 @@
   color: var(--primary-color);
 }
 
+#new-project-btn {
+  display: block;
+  margin: 20px auto;
+}
+
 /* MODAL */
 .overlay {
   position: absolute;
