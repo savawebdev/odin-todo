@@ -26,45 +26,54 @@
         <h2 class="content-header">Default Project</h2>
 
         <div class="tasks">
-          <div class="task-category tasks-todo">
-            <h3 class="tasks-header">To Do</h3>
+          <h3 class="tasks-header">To Do</h3>
 
-            <div class="card">
-              <h4 class="card-title">Test</h4>
-              <p class="card-info">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Commodi, quos.
-              </p>
-              <p class="card-due-date">Due Date:</p>
-              <p class="card-priority">High Priority</p>
-            </div>
+          <div class="card">
+            <h4 class="card-title">Test</h4>
+            <p class="card-info">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi,
+              quos.
+            </p>
+            <p class="card-due-date">Due Date:</p>
+            <p class="card-priority">High Priority</p>
           </div>
-          <div class="task-category tasks-inprogress">
-            <h3 class="tasks-header">In Progress</h3>
 
-            <div class="card">
-              <h4 class="card-title">Test</h4>
-              <p class="card-info">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Commodi, quos.
-              </p>
-              <p class="card-due-date">Due Date:</p>
-              <p class="card-priority">High Priority</p>
-            </div>
-          </div>
-          <div class="task-category tasks-completed">
-            <h3 class="tasks-header">Completed</h3>
+          <button class="btn" id="new-task-btn">New Task</button>
 
-            <div class="card">
-              <h4 class="card-title">Test</h4>
-              <p class="card-info">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Commodi, quos.
-              </p>
-              <p class="card-due-date">Due Date:</p>
-              <p class="card-priority">High Priority</p>
+          <form action="/" class="new-task-form">
+            <div class="form-control">
+              <label for="title">Title</label>
+              <input type="text" name="title" id="title" />
             </div>
-          </div>
+
+            <div class="form-control">
+              <label for="description">Description</label>
+              <textarea
+                name="description"
+                id="description"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+
+            <div class="form-control">
+              <label for="due-date">Due Date</label>
+              <input type="date" name="due-date" id="due-date" />
+            </div>
+
+            <div class="form-control">
+              <label for="priority">Priority</label>
+              <select name="priority" id="priority">
+                <option value="low">Low</option>
+                <option value="normal">Normal</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+
+            <div class="form-">
+              <button type="submit" class="btn" id="save-task-btn">Save</button>
+            </div>
+          </form>
         </div>
       </div>
     </main>
