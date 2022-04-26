@@ -52,6 +52,10 @@
   list-style-type: none;
 }
 
+.projects-list-item {
+  cursor: pointer;
+}
+
 /* CONTENT */
 .content {
   width: 100%;

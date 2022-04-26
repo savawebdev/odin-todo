@@ -1,9 +1,7 @@
-import { uniqueID } from "../helpers/helpers";
-
 const projects = (() => {
   const data = [
     {
-      id: uniqueID(),
+      id: 1,
       title: "Default Project",
     },
   ];

@@ -1,6 +1,11 @@
 import tasks from "../data/tasks";
 
 const UI = (() => {
+  const contentHeader = document.querySelector(".content-header");
+
+  const firstLoad = () => {
+    contentHeader.setAttribute("data-project-id", "1");
+  };
   // Create a new task card
   const createTaskCard = (title, description, dueDate, priority) => {
     const taskCard = document.createElement("div");
@@ -43,12 +48,30 @@ const UI = (() => {
       newListItem.setAttribute("data-project-id", project.id);
       projectsList.appendChild(newListItem);
     });
+
+    const projectsListItems = document.querySelectorAll(".projects-list-item");
+    projectsListItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const projectId = item.getAttribute("data-project-id");
+        const project = projects.find((element) => element.id == projectId);
+        contentHeader.textContent = project.title;
+        contentHeader.setAttribute("data-project-id", projectId);
+        displayTasks();
+      });
+    });
   };
 
-  const displayTasks = (project) => {
+  const displayTasks = () => {
     const tasksElement = document.querySelector(".tasks");
-    tasks.forEach((task) => {
-      if (task.projectId === project.id) {
+    const taskCards = document.querySelectorAll(".card");
+    taskCards.forEach((card) => {
+      card.remove();
+    });
+
+    const projectId = contentHeader.getAttribute("data-project-id");
+
+    tasks.data.forEach((task) => {
+      if (task.projectId == projectId) {
         const taskCard = createTaskCard(
           task.title,
           task.description,
@@ -61,7 +84,7 @@ const UI = (() => {
     });
   };
 
-  return { createTaskCard, displayProjects, displayTasks };
+  return { firstLoad, createTaskCard, displayProjects, displayTasks };
 })();
 
 export default UI;
