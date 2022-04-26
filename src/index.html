@@ -47,8 +47,8 @@
 
     <div class="overlay hidden"></div>
 
-    <div class="modal hidden">
-      <form action="/" class="new-task-form">
+    <div class="modal hidden" id="new-task-modal">
+      <form action="/" class="form">
         <div class="form-control">
           <h2 class="form-header">New Task</h2>
         </div>
@@ -86,7 +86,28 @@
             Save
           </button>
 
-          <button class="btn btn-danger" id="cancel-btn">Cancel</button>
+          <button class="btn btn-danger" id="cancel-task-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal hidden" id="new-project-modal">
+      <form action="/" class="form">
+        <div class="form-control">
+          <h2 class="form-header">New Project</h2>
+        </div>
+
+        <div class="form-control">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-success" id="save-project-btn">
+            Save
+          </button>
+
+          <button class="btn btn-danger" id="cancel-project-btn">Cancel</button>
         </div>
       </form>
     </div>

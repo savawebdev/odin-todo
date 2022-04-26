@@ -1,13 +1,4 @@
 const UI = (() => {
-  // Open/close modal
-  const toggleModal = () => {
-    const overlay = document.querySelector(".overlay");
-    const modal = document.querySelector(".modal");
-
-    overlay.classList.toggle("hidden");
-    modal.classList.toggle("hidden");
-  };
-
   // Create a new task card
   const createTaskCard = (title, descritpion, dueDate, priority) => {
     const taskCard = document.createElement("div");
@@ -51,7 +42,7 @@ const UI = (() => {
     });
   };
 
-  return { toggleModal, createTaskCard, displayProjects };
+  return { createTaskCard, displayProjects };
 })();
 
 export default UI;
