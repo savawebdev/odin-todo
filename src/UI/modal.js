@@ -46,7 +46,7 @@ const modal = (() => {
     });
   };
 
-  return { setupModals };
+  return { open, close, setupModals };
 })();
 
 export default modal;

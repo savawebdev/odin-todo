@@ -1,6 +1,8 @@
+import tasks from "../data/tasks";
+
 const UI = (() => {
   // Create a new task card
-  const createTaskCard = (title, descritpion, dueDate, priority) => {
+  const createTaskCard = (title, description, dueDate, priority) => {
     const taskCard = document.createElement("div");
     taskCard.classList.add("card");
 
@@ -42,7 +44,23 @@ const UI = (() => {
     });
   };
 
-  return { createTaskCard, displayProjects };
+  const displayTasks = (project) => {
+    const tasksElement = document.querySelector(".tasks");
+    tasks.forEach((task) => {
+      if (task.projectId === project.id) {
+        const taskCard = createTaskCard(
+          task.title,
+          task.description,
+          task.dueDate,
+          task.priority
+        );
+
+        tasksElement.appendChild(taskCard);
+      }
+    });
+  };
+
+  return { createTaskCard, displayProjects, displayTasks };
 })();
 
 export default UI;

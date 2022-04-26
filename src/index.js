@@ -3,5 +3,6 @@ import UI from "./UI/ui";
 import projects from "./data/projects";
 import modal from "./UI/modal";
 
-UI.displayProjects(projects);
 modal.setupModals();
+UI.displayProjects(projects);
+UI.displayTasks(projects[0]);
