@@ -4,6 +4,8 @@
   --primary-color: #313638;
   --secondary-color: #e0dfd5;
   --card-border-color: #e4b363;
+  --danger-color: #e71d36;
+  --success-color: #adf6b1;
 }
 
 * {
@@ -87,28 +89,14 @@
   font-weight: bold;
 }
 
-.btn {
-  width: 100px;
-  height: 30px;
-  background: var(--primary-color);
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  color: var(--secondary-color);
-  cursor: pointer;
-  box-shadow: 10px 5px 5px var(--secondary-color);
-  transition: all 0.2s ease-out;
-}
-
-.btn:hover {
-  opacity: 0.7;
-}
-
 .new-task-form {
   margin: 15px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: var(--card-border-color);
+  border-radius: 10px;
 }
 
 .form-control {
@@ -116,8 +104,13 @@
   margin-block: 10px;
 }
 
+.form-header {
+  text-align: center;
+}
+
 .form-control label {
   display: block;
+  font-weight: bold;
 }
 
 .form-control input,
@@ -134,4 +127,70 @@
 .form-control select:focus {
   outline: none;
   box-shadow: 10px 5px 10px var(--primary-color);
+}
+
+.form-control textarea {
+  resize: none;
+}
+
+.form-actions {
+  margin-block: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* BUTTONS */
+.btn {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 10px 5px 10px var(--primary-color);
+  transition: all 0.2s ease-out;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn-dark {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.btn-danger {
+  background: var(--danger-color);
+  color: var(--secondary-color);
+}
+
+.btn-success {
+  background: var(--success-color);
+  color: var(--primary-color);
+}
+
+/* MODAL */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.hidden {
+  display: none;
 }
